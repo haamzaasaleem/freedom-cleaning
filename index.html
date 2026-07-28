@@ -253,6 +253,51 @@
   .flag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:100px;font-size:.8rem;font-weight:700;color:#fff;margin-top:14px}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;color:#7c8cb3;font-size:.85rem}
 
+  /* ===== INSTANT PRICE ESTIMATOR ===== */
+  .estimator{background:linear-gradient(160deg,#0d1e40,#081227);color:#fff;padding:70px 0;position:relative;overflow:hidden}
+  .est-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;position:relative;z-index:2}
+  .est-card{background:#fff;color:var(--ink);border-radius:18px;padding:30px;box-shadow:0 26px 60px -26px rgba(0,0,0,.6)}
+  .est-card h3{font-family:'Arial Black';font-size:1.3rem;margin-bottom:4px}
+  .est-card h3 .hl{color:var(--red)}
+  .est-card .sm{font-size:.86rem;color:var(--gray);margin-bottom:18px}
+  .est-label{font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.6px;color:var(--blue);display:block;margin:14px 0 8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1.5px solid var(--line);background:#f6f8fe;border-radius:100px;padding:9px 15px;font-weight:700;font-size:.85rem;cursor:pointer;transition:.18s;user-select:none}
+  .chip:hover{border-color:var(--blue-br)}
+  .chip.sel{background:linear-gradient(180deg,var(--blue-br),var(--blue));color:#fff;border-color:transparent;box-shadow:0 8px 18px -8px rgba(31,86,214,.6)}
+  .size-row{display:flex;align-items:center;gap:14px;margin-top:6px}
+  .size-row input[type=range]{flex:1;accent-color:var(--blue)}
+  .size-val{font-family:'Arial Black';font-size:1.05rem;min-width:104px;text-align:right;color:var(--navy)}
+  .est-out{text-align:center;color:#fff}
+  .est-out .k{color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:.82rem;margin-bottom:8px}
+  .est-out h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:14px}
+  .est-price{font-family:'Arial Black';font-size:clamp(3rem,6vw,4.6rem);line-height:1;color:#fff;white-space:nowrap}
+  .est-price .cur{color:var(--sky);font-size:.55em;vertical-align:top}
+  .est-note{color:#a9b6d8;font-size:.95rem;margin-top:14px;max-width:340px;margin-left:auto;margin-right:auto}
+  .est-out .btn{margin-top:22px}
+  .est-bg{position:absolute;inset:-40% 0;background:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80&auto=format&fit=crop') center/cover;opacity:.16;will-change:transform;z-index:1}
+
+  /* ===== BEFORE / AFTER SLIDER ===== */
+  .ba-wrap{position:relative;width:100%;aspect-ratio:4/3;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -24px rgba(12,26,61,.55);user-select:none;cursor:ew-resize}
+  .ba-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .ba-after{clip-path:inset(0 0 0 50%)}
+  .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 14px rgba(0,0,0,.4)}
+  .ba-handle::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:1.2rem;font-weight:900;box-shadow:0 6px 16px -4px rgba(0,0,0,.4)}
+  .ba-tag{position:absolute;bottom:14px;z-index:3;background:rgba(8,16,38,.72);color:#fff;padding:6px 14px;border-radius:100px;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.6px;pointer-events:none}
+  .ba-tag.before{left:14px}.ba-tag.after{right:14px;background:var(--grn)}
+
+  /* ===== REVIEWS CAROUSEL CONTROLS ===== */
+  .rev-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:22px 0 30px}
+  .rev-tab{border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#d3ddf3;border-radius:100px;padding:8px 16px;font-weight:800;font-size:.8rem;cursor:pointer;transition:.18s}
+  .rev-tab:hover{color:#fff}
+  .rev-tab.sel{background:#fff;color:var(--navy);border-color:transparent}
+  .rev-nav{display:flex;gap:12px;justify-content:center;margin-top:26px}
+  .rev-nav button{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:#fff;font-size:1.3rem;cursor:pointer;transition:.18s;display:grid;place-items:center}
+  .rev-nav button:hover{background:#fff;color:var(--navy);border-color:transparent}
+  .rev.hide{display:none}
+
+  @media(max-width:820px){.est-grid{grid-template-columns:1fr}}
+
   .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:grid;grid-template-columns:1fr 1fr}
   .sticky-bar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:20px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;font-size:.95rem;color:#fff;transition:filter .2s}
   .sticky-bar .sb-ic{width:22px;height:22px;flex-shrink:0}
@@ -302,6 +347,59 @@
     .marquee{font-size:.82rem}
     .footer .brand-logo{height:80px}
   }
+  /* ===== DESKTOP-ONLY EXTRA ANIMATIONS (wide screens) ===== */
+  @media(min-width:901px){
+    /* richer scroll reveals: alternate slide-in directions */
+    .svc-grid .svc.reveal:nth-child(3n+1){transform:translateY(40px) translateX(-30px)}
+    .svc-grid .svc.reveal:nth-child(3n+3){transform:translateY(40px) translateX(30px)}
+    .svc-grid .svc.reveal.in{transform:none}
+    .svc-grid .svc{transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+    /* staggered card entrance */
+    .svc-grid .svc:nth-child(1){transition-delay:.05s}
+    .svc-grid .svc:nth-child(2){transition-delay:.15s}
+    .svc-grid .svc:nth-child(3){transition-delay:.25s}
+    .svc-grid .svc:nth-child(4){transition-delay:.1s}
+    .svc-grid .svc:nth-child(5){transition-delay:.2s}
+    .svc-grid .svc:nth-child(6){transition-delay:.3s}
+    /* stronger card hover: lift + tilt + glow */
+    .svc:hover{transform:translateY(-14px) scale(1.02)!important;box-shadow:0 40px 70px -30px rgba(31,86,214,.6)}
+    .svc:hover .svc-img{transform:scale(1.12)}
+    .svc-img{transition:transform .7s cubic-bezier(.22,1,.36,1)}
+    /* animated shine sweep across cards on hover */
+    .svc::before{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;z-index:4;
+      background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent);
+      transform:skewX(-20deg);transition:none;pointer-events:none}
+    .svc:hover::before{animation:shine 0.9s ease}
+    @keyframes shine{to{left:125%}}
+    /* pulsing glow on primary CTAs */
+    .hero-cta .btn-red{animation:ctaGlow 2.6s ease-in-out infinite}
+    @keyframes ctaGlow{0%,100%{box-shadow:0 10px 22px -8px rgba(224,30,43,.7)}50%{box-shadow:0 10px 40px -6px rgba(224,30,43,1),0 0 30px -4px rgba(224,30,43,.7)}}
+    /* section titles slide up with underline grow */
+    .sec-title{position:relative}
+    .reveal.in .sec-title::after,.sec-title.in::after{width:70px}
+    /* stats numbers get a subtle float */
+    .stat b{transition:transform .3s}
+    .stat:hover b{transform:scale(1.06) translateY(-4px)}
+    /* review cards lift + border glow on hover */
+    .rev{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+    .rev:hover{transform:translateY(-8px);box-shadow:0 30px 60px -28px rgba(0,0,0,.6),0 0 0 2px rgba(63,185,208,.4)}
+    /* floating decorative orbs in dark sections */
+    .stats,.revs,.quote-sec{position:relative;overflow:hidden}
+    .orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(2px);opacity:.5;z-index:0}
+    /* nav links get animated glow underline already; boost logo subtle float */
+    .brand-logo{transition:transform .4s}
+    header:hover .brand-logo{transform:scale(1.04)}
+    /* scheduling step icons pulse-scale on hover */
+    .sstep:hover .gif{transform:scale(1.12) rotate(-3deg)}
+    .sstep .gif{transition:transform .4s cubic-bezier(.22,1,.36,1)}
+    /* area rows slide highlight */
+    .area{transition:background .3s,padding-left .3s}
+    .area:hover{background:rgba(63,185,208,.08);padding-left:8px;border-radius:8px}
+    /* FAQ items shift on hover */
+    .faq-item{transition:transform .25s}
+    .faq-item:hover{transform:translateX(6px)}
+  }
+
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -387,7 +485,16 @@
 <!-- WHY US -->
 <section class="why has-wave" id="why">
   <div class="wrap why-grid">
-    <div class="why-photo reveal" id="whyPhoto"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80&auto=format&fit=crop" alt="Technician cleaning solar panels"></div>
+    <div class="reveal" id="whyPhoto">
+      <div class="ba-wrap" id="baWrap">
+        <img class="ba-before" src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1400&q=80&auto=format&fit=crop" alt="Panels before cleaning">
+        <img class="ba-after" id="baAfter" src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=1400&q=80&auto=format&fit=crop" alt="Panels after cleaning">
+        <div class="ba-handle" id="baHandle"></div>
+        <span class="ba-tag before">Before</span>
+        <span class="ba-tag after">After</span>
+      </div>
+      <p style="text-align:center;color:var(--gray);font-size:.86rem;margin-top:10px">← Drag to compare before &amp; after</p>
+    </div>
     <div class="reveal">
       <div class="kicker" style="text-align:left"><span class="bar">|</span> Why Choose Us</div>
       <h2>Work Done Right — The First Time</h2>
@@ -411,6 +518,45 @@
 </section>
 
 <!-- QUOTE -->
+<!-- INSTANT PRICE ESTIMATOR -->
+<section class="estimator" id="estimator">
+  <div class="est-bg" id="estBg"></div>
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:36px">
+      <div class="kicker" style="color:var(--gold)"><span class="bar">|</span> Instant Estimate</div>
+      <h2 class="sec-title" style="color:#fff">See Your Ballpark Price</h2>
+      <p class="sec-sub" style="color:#a9b6d8">Pick a service and size for an instant range. No email required — get an exact quote when you're ready.</p>
+    </div>
+    <div class="est-grid">
+      <div class="est-card reveal">
+        <h3>Build Your <span class="hl">Estimate</span></h3>
+        <p class="sm">Rough guide only — final price depends on access and condition.</p>
+        <span class="est-label">Service</span>
+        <div class="chips" id="estServices">
+          <div class="chip sel" data-base="12" data-min="149">Solar Panel Cleaning</div>
+          <div class="chip" data-base="0" data-min="349">Bird Proofing / Critter Guard</div>
+          <div class="chip" data-base="0" data-min="299">Roof Soft Washing</div>
+          <div class="chip" data-base="0" data-min="129">Window Cleaning</div>
+          <div class="chip" data-base="0" data-min="139">Gutter Cleaning</div>
+          <div class="chip" data-base="0" data-min="199">Pressure Washing</div>
+        </div>
+        <span class="est-label" id="sizeLabel">Number of Panels</span>
+        <div class="size-row">
+          <input type="range" id="estSize" min="4" max="60" step="2" value="20">
+          <span class="size-val" id="estSizeVal">20 panels</span>
+        </div>
+      </div>
+      <div class="est-out reveal">
+        <div class="k">Estimated Range</div>
+        <h2 style="margin-bottom:0">Your Project</h2>
+        <div class="est-price"><span class="cur">$</span><span id="estLow">239</span> – <span id="estHigh">329</span></div>
+        <p class="est-note">This is a friendly estimate. Bundle services for a better rate — ask when you book.</p>
+        <a href="#quote" class="btn btn-red">Get My Exact Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="quote-sec" id="quote">
   <div class="wrap">
     <div class="reveal" style="text-align:center;padding-top:44px">
@@ -525,10 +671,23 @@
       <h2 class="sec-title" style="color:#fff">What Our Customers Love About Us</h2>
       <p class="sec-sub" style="color:#a9b6d8">Real reviews from homeowners who trust Freedom Cleaning with their solar investment.</p>
     </div>
-    <div class="rev-grid">
-      <div class="rev reveal"><div class="rev-top"><div class="rev-av">MR</div><div><b>Michael R.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Solar Panel Cleaning</span><p>"They got our panels looking brand new and our energy bill dropped the next month. Professional, on time, and respectful of our property."</p></div>
-      <div class="rev reveal"><div class="rev-top"><div class="rev-av">SD</div><div><b>Sarah D.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Bird Proofing</span><p>"Had a bird nesting problem under our panels for months. Freedom Cleaning installed critter guard and cleaned everything up. Quick and thorough."</p></div>
-      <div class="rev reveal"><div class="rev-top"><div class="rev-av">JT</div><div><b>James T.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Full Package</span><p>"As a fellow vet, I appreciated the honesty and attention to detail. Fair pricing and they showed up exactly when they said they would. Highly recommend."</p></div>
+    <div class="rev-tabs reveal" id="revTabs">
+      <button class="rev-tab sel" data-cat="all">All</button>
+      <button class="rev-tab" data-cat="solar">Solar Cleaning</button>
+      <button class="rev-tab" data-cat="bird">Bird Proofing</button>
+      <button class="rev-tab" data-cat="other">Exterior Care</button>
+    </div>
+    <div class="rev-grid" id="revGrid">
+      <div class="rev reveal" data-cat="solar"><div class="rev-top"><div class="rev-av">MR</div><div><b>Michael R.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Solar Panel Cleaning</span><p>"They got our panels looking brand new and our energy bill dropped the next month. Professional, on time, and respectful of our property."</p></div>
+      <div class="rev reveal" data-cat="bird"><div class="rev-top"><div class="rev-av">SD</div><div><b>Sarah D.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Bird Proofing</span><p>"Had a bird nesting problem under our panels for months. Freedom Cleaning installed critter guard and cleaned everything up. Quick and thorough."</p></div>
+      <div class="rev reveal" data-cat="solar"><div class="rev-top"><div class="rev-av">JT</div><div><b>James T.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Full Package</span><p>"As a fellow vet, I appreciated the honesty and attention to detail. Fair pricing and they showed up exactly when they said they would. Highly recommend."</p></div>
+      <div class="rev reveal" data-cat="other"><div class="rev-top"><div class="rev-av">LP</div><div><b>Linda P.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Window Cleaning</span><p>"Streak-free windows inside and out. The crew was polite, tidy, and finished faster than I expected. Booking again in spring."</p></div>
+      <div class="rev reveal" data-cat="other"><div class="rev-top"><div class="rev-av">DK</div><div><b>David K.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Pressure Washing</span><p>"Driveway and patio look brand new. They were careful around the plants and cleaned up every bit of debris. Great value."</p></div>
+      <div class="rev reveal" data-cat="bird"><div class="rev-top"><div class="rev-av">AR</div><div><b>Amanda R.</b><span class="st">★★★★★</span></div></div><span class="svc-tag">Critter Guard</span><p>"No more pigeons under the array. Installation was neat and you can barely see the mesh. Peace of mind restored."</p></div>
+    </div>
+    <div class="rev-nav reveal">
+      <button id="revPrev" aria-label="Previous review">‹</button>
+      <button id="revNext" aria-label="Next review">›</button>
     </div>
     <div style="text-align:center;margin-top:34px" class="reveal"><a href="#quote" class="btn btn-red">📞 Contact Us</a></div>
   </div>
@@ -676,6 +835,143 @@
   }
   addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(parallax);ticking=true;}});
   parallax();
+
+  // ===== DESKTOP-ONLY extra effects =====
+  if(window.matchMedia('(min-width:901px)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    // 1) Mouse-move parallax on hero layers for depth
+    const hero=document.querySelector('.hero');
+    const hsun=document.querySelector('.hero-sun'), hstars=document.getElementById('stars');
+    if(hero){
+      hero.addEventListener('mousemove',e=>{
+        const cx=(e.clientX/window.innerWidth-0.5), cy=(e.clientY/window.innerHeight-0.5);
+        if(hsun)hsun.style.transform='translate('+(cx*40)+'px,'+(cy*40)+'px)';
+        if(hstars)hstars.style.transform='translate('+(cx*18)+'px,'+(cy*18)+'px)';
+      });
+      hero.addEventListener('mouseleave',()=>{
+        if(hsun)hsun.style.transform='';if(hstars)hstars.style.transform='';
+      });
+    }
+    // 2) Floating glowing orbs in dark sections
+    const orbColors=['rgba(63,185,208,.35)','rgba(47,123,255,.3)','rgba(224,30,43,.22)'];
+    document.querySelectorAll('.stats,.revs,.quote-sec').forEach(sec=>{
+      for(let i=0;i<4;i++){
+        const o=document.createElement('div');o.className='orb';
+        const sz=60+Math.random()*140;
+        o.style.width=sz+'px';o.style.height=sz+'px';
+        o.style.left=Math.random()*100+'%';o.style.top=Math.random()*100+'%';
+        o.style.background='radial-gradient(circle,'+orbColors[i%3]+',transparent 70%)';
+        o.style.animation='orbFloat '+(8+Math.random()*8)+'s ease-in-out '+(Math.random()*4)+'s infinite';
+        sec.appendChild(o);
+      }
+    });
+    // inject orb keyframes
+    const st=document.createElement('style');
+    st.textContent='@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.15)}66%{transform:translate(-25px,25px) scale(.9)}}';
+    document.head.appendChild(st);
+    // 3) Count-up already exists; add a subtle tilt to service cards following cursor
+    document.querySelectorAll('.svc').forEach(card=>{
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+        card.style.transform='translateY(-14px) scale(1.02) perspective(600px) rotateX('+(-py*6)+'deg) rotateY('+(px*6)+'deg)';
+      });
+      card.addEventListener('mouseleave',()=>{card.style.transform='';});
+    });
+  }
+
+  // ===== PRICE ESTIMATOR =====
+  (function(){
+    const svc=document.getElementById('estServices');
+    const size=document.getElementById('estSize');
+    const sizeVal=document.getElementById('estSizeVal');
+    const sizeLabel=document.getElementById('sizeLabel');
+    const low=document.getElementById('estLow'), high=document.getElementById('estHigh');
+    if(!svc)return;
+    function sel(){return svc.querySelector('.chip.sel');}
+    function unit(){
+      const t=sel().textContent;
+      if(t.indexOf('Solar')>-1)return 'panels';
+      if(t.indexOf('Window')>-1)return 'windows';
+      if(t.indexOf('Gutter')>-1||t.indexOf('Pressure')>-1||t.indexOf('Roof')>-1)return 'sq ft (100s)';
+      return 'units';
+    }
+    function calc(){
+      const c=sel();
+      const base=+c.dataset.base, min=+c.dataset.min;
+      const n=+size.value;
+      let est=Math.max(min, min + base*n);
+      const lo=Math.round(est/10)*10;
+      const hi=Math.round(est*1.35/10)*10;
+      low.textContent=lo; high.textContent=hi;
+      const u=unit();
+      sizeLabel.textContent = u==='panels'?'Number of Panels':(u==='windows'?'Number of Windows':'Approx. Area');
+      sizeVal.textContent = n+' '+u;
+    }
+    svc.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+      svc.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel'));
+      c.classList.add('sel');calc();
+    }));
+    size.addEventListener('input',calc);
+    calc();
+  })();
+
+  // ===== BEFORE / AFTER SLIDER =====
+  (function(){
+    const wrap=document.getElementById('baWrap');
+    const after=document.getElementById('baAfter');
+    const handle=document.getElementById('baHandle');
+    if(!wrap)return;
+    function setPos(clientX){
+      const r=wrap.getBoundingClientRect();
+      let p=(clientX-r.left)/r.width*100;
+      p=Math.max(0,Math.min(100,p));
+      after.style.clipPath='inset(0 0 0 '+p+'%)';
+      handle.style.left=p+'%';
+    }
+    let dragging=false;
+    wrap.addEventListener('mousedown',e=>{dragging=true;setPos(e.clientX);});
+    addEventListener('mousemove',e=>{if(dragging)setPos(e.clientX);});
+    addEventListener('mouseup',()=>dragging=false);
+    wrap.addEventListener('touchstart',e=>{setPos(e.touches[0].clientX);},{passive:true});
+    wrap.addEventListener('touchmove',e=>{setPos(e.touches[0].clientX);},{passive:true});
+  })();
+
+  // ===== REVIEWS FILTER + CAROUSEL =====
+  (function(){
+    const tabs=document.getElementById('revTabs');
+    const grid=document.getElementById('revGrid');
+    if(!tabs)return;
+    const all=Array.from(grid.querySelectorAll('.rev'));
+    let cat='all', page=0, perPage=3;
+    function filtered(){return cat==='all'?all:all.filter(r=>r.dataset.cat===cat);}
+    function render(){
+      const list=filtered();
+      const maxPage=Math.max(0,Math.ceil(list.length/perPage)-1);
+      if(page>maxPage)page=maxPage;
+      all.forEach(r=>r.classList.add('hide'));
+      list.slice(page*perPage,page*perPage+perPage).forEach(r=>r.classList.remove('hide'));
+    }
+    tabs.querySelectorAll('.rev-tab').forEach(t=>t.addEventListener('click',()=>{
+      tabs.querySelectorAll('.rev-tab').forEach(x=>x.classList.remove('sel'));
+      t.classList.add('sel');cat=t.dataset.cat;page=0;render();
+    }));
+    document.getElementById('revNext').addEventListener('click',()=>{
+      const maxPage=Math.max(0,Math.ceil(filtered().length/perPage)-1);
+      page=page>=maxPage?0:page+1;render();
+    });
+    document.getElementById('revPrev').addEventListener('click',()=>{
+      const maxPage=Math.max(0,Math.ceil(filtered().length/perPage)-1);
+      page=page<=0?maxPage:page-1;render();
+    });
+    function fit(){perPage=window.matchMedia('(max-width:820px)').matches?1:3;render();}
+    addEventListener('resize',fit);fit();
+  })();
+
+  // parallax for estimator bg
+  (function(){
+    const eb=document.getElementById('estBg');
+    if(eb){addEventListener('scroll',()=>{const r=eb.parentElement.getBoundingClientRect();eb.style.transform='translateY('+((r.top+r.height/2-innerHeight/2)*-0.08)+'px)';});}
+  })();
 
   // quote form handling
   const qf=document.getElementById('quoteForm');
